@@ -50,3 +50,15 @@ class Phone:
                 return {'message': 'contact does not exist'}
             return {'message': 'please enter correct detail format'}
         return {'message': 'please enter details to be updated'}
+
+    def view_contact(self, name):
+        """method to view a contacts number."""
+        if bool(name):
+            if isinstance(name, str):
+                if name in self.contact.keys():
+                    x = set(name)
+                    for x in self.contact:
+                        return self.contact[name]
+                return {'message': 'contact does not exist'}
+            return {'message': 'please enter correct detail format'}
+        return {'message': 'please enter details to be updated'}
