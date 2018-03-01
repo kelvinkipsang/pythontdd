@@ -57,3 +57,11 @@ def test_wrong_data(self):
     response = create.create_contact(999, 999)
 
     self.assertEqual(response, 'invalid input')
+
+def test_view_all(self):
+    """testing view_all_contacts."""
+    create = Phone()
+    create.create_contact('sam', 99669)
+    response = create.view_all()
+
+    self.assertEqual(response, create.contact)
