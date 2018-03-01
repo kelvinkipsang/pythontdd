@@ -39,3 +39,21 @@ def test_update_contact(self):
             update = True
 
     self.assertEqual(update, True)
+
+def test_check_no_duplicates(self):
+    """check if creating duplicates fails"""
+    create = Phone()
+    create.create_contact('peter', 999)
+    create.create_contact('peter', 999)
+    duplicate = True
+    if len(list(set(create.contact.keys()))) == len(create.contact.keys()):
+        duplicate = False
+
+    self.assertEqual(duplicate, False)
+
+def test_wrong_data(self):
+    """testing invalid input."""
+    create = Phone()
+    response = create.create_contact(999, 999)
+
+    self.assertEqual(response, 'invalid input')
