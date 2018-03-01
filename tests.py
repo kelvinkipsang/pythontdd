@@ -27,3 +27,15 @@ def test_create_contact(self):
         creation = True
 
     self.assertEqual(creation, True)
+
+def test_update_contact(self):
+    """testing if updating contact works"""
+    edit = Phone()
+    edit.create_contact('miano', 900)
+    edit.update_contact('miano', 900, 'trisha', 8000)
+    update = False
+    if str(900) not in str(edit.contact.get('miano')):
+        if 'trisha' in edit.contact.keys():
+            update = True
+
+    self.assertEqual(update, True)
