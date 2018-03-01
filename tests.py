@@ -65,3 +65,11 @@ def test_view_all(self):
     response = create.view_all()
 
     self.assertEqual(response, create.contact)
+
+def test_view_one(self):
+    """testing if viewing one contact works."""
+    create = Phone()
+    create.create_contact('gimmz', 669)
+    response = create.view_contact('gimmz')
+
+    self.assertEqual(response, 669)
