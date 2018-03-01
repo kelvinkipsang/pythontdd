@@ -18,3 +18,12 @@ class MyTest(unittest.TestCase):
             deletion = False
 
         self.assertEqual(deletion, True)
+
+def test_create_contact(self):
+    """testing if create contact works"""
+    create = Phone()
+    create.create_contact('kelvin', 0707)
+    if create.contact.get('kelvin') == 0707:
+        creation = True
+
+    self.assertEqual(creation, True)
