@@ -37,3 +37,16 @@ class Phone:
     def view_all(self):
         """method for view_all_contacts."""
         return self.contact
+
+
+    def update_contact(self, name, number, nname, nnumber):
+        """method for creating a contact."""
+        if bool(name and number and nname and nnumber):
+            if isinstance(name and nname, str) and isinstance(number and nnumber, int):
+                if name in self.contact.keys():
+                    self.contact[name] = nnumber
+                    self.contact[nname] = self.contact.pop(name)
+                    return {'message': 'contact updated successfully'}
+                return {'message': 'contact does not exist'}
+            return {'message': 'please enter correct detail format'}
+        return {'message': 'please enter details to be updated'}
