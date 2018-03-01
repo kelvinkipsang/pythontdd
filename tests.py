@@ -73,3 +73,6 @@ def test_view_one(self):
     response = create.view_contact('gimmz')
 
     self.assertEqual(response, 669)
+
+if __name__ == '__main__':
+    unittest.main()
