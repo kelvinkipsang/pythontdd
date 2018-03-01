@@ -22,3 +22,18 @@ class Phone:
 
         # self.contact.update({name:number})
         # print self.contact
+
+    def delete_contact(self, name):
+        """method for deleting a contact."""
+        if bool(name):
+            if isinstance(name, str):
+                if name in self.contact.keys():
+                    del self.contact[name]
+                    return {'message': 'contact deleted'}
+                return {'message': 'contact does not exist'}
+            return {'message': 'invalid name'}
+        return {'message': 'please enter name'}
+
+    def view_all(self):
+        """method for view_all_contacts."""
+        return self.contact

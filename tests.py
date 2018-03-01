@@ -1,5 +1,5 @@
 import unittest
-"""importing testing libraries"""
+"""testing libraries"""
 from phone import Phone
 """importing phone class from phone.py """
 
